@@ -1,0 +1,43 @@
+<template>
+
+    <!--SPINNER-->
+    <template if:false={doneLoading}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+
+    <!-- REGISTRATION FORM -->
+    <div class="slds-var-m-horizontal_x-large">
+        <lightning-card  title="Meetup Registration">
+
+             <!-- Alert Messages -->
+             <template if:true={alertMsg}>
+                <div class={alertClass} role="alert">
+                    <h2>{alertMsg}</h2>
+                </div>
+            </template>
+
+            <div class="slds-var-p-around_large">
+                <lightning-record-edit-form object-api-name="Meetup_Registration__c" onsuccess={handleSuccess} onsubmit={handleSubmit}>
+                    <lightning-messages>
+                    </lightning-messages>
+                    <lightning-input-field field-name="Meetup__c" disabled = "true" value={meetupId}>
+                    </lightning-input-field>
+                    <lightning-input-field field-name="FirstName__c">
+                    </lightning-input-field>
+                    <lightning-input-field field-name="LastName__c">
+                    </lightning-input-field>
+                    <lightning-input-field field-name="Email__c" onchange={handleEmailChange} >
+                    </lightning-input-field>
+
+                    <!-- SUBMIT BUTTON -->
+                    <lightning-button
+                        class="slds-var-m-top_small"
+                        type="submit"
+                        label="Register"
+                        disabled={submitDisabled}>
+                    </lightning-button>
+                </lightning-record-edit-form>
+            </div>
+        </lightning-card>
+    </div>
+</template>

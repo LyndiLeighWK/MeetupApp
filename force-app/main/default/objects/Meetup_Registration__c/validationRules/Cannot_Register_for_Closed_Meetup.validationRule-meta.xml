@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Register_for_Closed_Meetup</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISNEW(),ISPICKVAL( Meetup__r.Status__c, &apos;Closed&apos;))</errorConditionFormula>
+    <errorMessage>Sorry, this meetup is now closed to registrations!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Meetup Registration</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Meetup Registrations</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Sorry, this Meetup is already full! --></errorMessage>
+        <name>Cannot_Exceed_Registration_Limit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sorry, this meetup is now closed to registrations! --></errorMessage>
+        <name>Cannot_Register_for_Closed_Meetup</name>
+    </validationRules>
+</CustomObjectTranslation>
